@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>IMDEX</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h1>INDEX</h1>
+
+    <img src="{% static 'images/catmaid.jpg' %}"
+    <h2>{{ compre }}</h2>
+    <table>
+        <thead>
+            <th>Produto</th>
+            <th>Preço
+            <th>Estoque</th>
+        </thead>
+        <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+            <td>{{ produto.preco }}</td>
+            <td>{{ produto.estoque }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button onclick="teste()">clique-me</button>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
